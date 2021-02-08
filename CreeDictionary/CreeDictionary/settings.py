@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     "API.apps.APIConfig",
     "CreeDictionary.apps.CreeDictionaryConfig",
     "morphodict.apps.MorphodictConfig",
+    "search_quality",
     "django_js_reverse",
 ]
 
