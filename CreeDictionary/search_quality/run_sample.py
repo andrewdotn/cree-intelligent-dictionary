@@ -5,7 +5,6 @@ from os import PathLike
 
 from API.models import Wordform
 from . import SampleSearchResultsJson, DEFAULT_SAMPLE_FILE
-from .analyze_results import count_results
 from .sample import load_sample_definition
 
 
@@ -29,7 +28,7 @@ def gen_run_sample(sample_file: PathLike = DEFAULT_SAMPLE_FILE, *, out_file: Pat
             "results": results,
         }
 
-        count = count_results(results)
+        count = sum(1 if r["is_lemma"] else 2 for r in results)
         yield f"{count:,} results for ‘{query}’ in {time_taken:0.3}s"
 
     # "wt" because although gzip is a binary file format, json.dump is going to
