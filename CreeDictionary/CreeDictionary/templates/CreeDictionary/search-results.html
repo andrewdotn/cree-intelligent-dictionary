@@ -1,5 +1,13 @@
 {% spaceless %}
 
+
+{% if grammar_result %}
+  <div style="background-color: #ded7d7">
+  <h1>Grammar tip 💡</h1>
+  {{ grammar_result }}
+  </div>
+{% endif %}
+
 {% for result in search_results %}
 <li class="search-results__result" data-cy="search-results">
   {% include './components/search-result.html' with result=result %}

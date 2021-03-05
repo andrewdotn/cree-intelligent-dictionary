@@ -3,6 +3,7 @@ from typing import Any, Dict, Literal
 
 from django.conf import settings
 
+from API.crk_grammar import GRAMMAR_TIPS
 from API.models import Wordform
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import redirect, render
@@ -69,6 +70,17 @@ def lemma_details(request, lemma_text: str = None):  # pragma: no cover
         return redirect(url_for_query(lemma_text or ""))
 
 
+def lookup_grammar(query):
+    """
+    If the given query should trigger a grammar info box, return the grammar
+    info, else None.
+    """
+    for k in GRAMMAR_TIPS:
+        if query in k["keywords"]:
+            return k["tip"]
+    return None
+
+
 def index(request):  # pragma: no cover
     """
     homepage with optional initial search results to display
@@ -101,6 +113,7 @@ def index(request):  # pragma: no cover
         # when we have initial query word to search and display
         query_string=user_query,
         search_results=search_results,
+        grammar_result=lookup_grammar(user_query),
         did_search=did_search,
     )
     return HttpResponse(render(request, "CreeDictionary/index.html", context))
@@ -116,6 +129,7 @@ def search_results(request, query_string: str):  # pragma: no cover
         "CreeDictionary/search-results.html",
         {
             "query_string": query_string,
+            "grammar_result": lookup_grammar(query_string),
             "search_results": [r.serialize() for r in results],
         },
     )
