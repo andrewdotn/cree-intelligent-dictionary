@@ -5,7 +5,7 @@ from os import fspath
 
 from gensim.models import KeyedVectors
 
-from CreeDictionary import settings
+from django.conf import settings
 from utils import shared_res_dir
 
 logger = logging.getLogger(__name__)

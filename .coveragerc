@@ -3,7 +3,7 @@
 [run]
 branch = True
 omit =
-  CreeDictionary/CreeDictionary/settings.py
+  ckreng/site/settings.py
   CreeDictionary/manage.py
   CreeDictionary/setup.py
   CreeDictionary/tests/*

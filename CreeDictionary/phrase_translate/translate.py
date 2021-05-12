@@ -155,7 +155,7 @@ def main():
             "CRITICAL",
         ],
     )
-    parser.add_argument("--django-settings-module", default="CreeDictionary.settings")
+    parser.add_argument("--django-settings-module", default="crkeng.site.settings")
     parser.add_argument("wordform", nargs="*")
     args = parser.parse_args()
 
