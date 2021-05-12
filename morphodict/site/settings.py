@@ -59,13 +59,13 @@ INSTALLED_APPS = [
     "django_js_reverse",
     # Internal apps
     # TODO: our internal app organization is kind of a mess 🙃
-    "CreeDictionary.API.apps.APIConfig",
-    "CreeDictionary.apps.CreeDictionaryConfig",
+    "CreeDictionary.API",
+    "CreeDictionary.CreeDictionary.apps.CreeDictionaryConfig",
     "CreeDictionary.cvd",
     "CreeDictionary.search_quality",
     "CreeDictionary.phrase_translate",
     "morphodict.apps.MorphodictConfig",
-    "DatabaseManager",
+    "CreeDictionary.DatabaseManager",
     # This comes last so that other apps can override templates
     "django.contrib.admin",
 ]
@@ -80,7 +80,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "securemiddleware.set_secure_headers",
+    "CreeDictionary.securemiddleware.set_secure_headers",
 ]
 
 TEMPLATES = [
@@ -94,7 +94,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "CreeDictionary.context_processors.display_options",
+                "CreeDictionary.CreeDictionary.context_processors.display_options",
             ]
         },
     }

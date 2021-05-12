@@ -23,9 +23,9 @@ PRODUCTION_HOST = "itwewina.altlab.app"
 
 ALLOWED_HOSTS.append(PRODUCTION_HOST)
 
-ROOT_URLCONF = "CreeDictionary.urls"
+ROOT_URLCONF = "CreeDictionary.CreeDictionary.urls"
 
-WSGI_APPLICATION = "CreeDictionary.wsgi.application"
+WSGI_APPLICATION = "CreeDictionary.CreeDictionary.wsgi.application"
 
 # Morphodict configuration
 
@@ -49,11 +49,11 @@ MORPHODICT_ORTHOGRAPHY = {
         "Latn": {"name": "SRO (êîôâ)"},
         "Latn-x-macron": {
             "name": "SRO (ēīōā)",
-            "converter": "CreeDictionary.orthography.to_macrons",
+            "converter": "CreeDictionary.CreeDictionary.orthography.to_macrons",
         },
         "Cans": {
             "name": "Syllabics",
-            "converter": "CreeDictionary.orthography.to_syllabics",
+            "converter": "CreeDictionary.CreeDictionary.orthography.to_syllabics",
         },
     },
 }

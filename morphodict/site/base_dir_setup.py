@@ -4,8 +4,9 @@ to set BASE_DIR correctly, that file needs to know which site it’s being calle
 from. The current workaround to pass that is to store the base dir here in a
 variable that can only be set once.
 """
+from pathlib import Path
 
-_base_dir = None
+_base_dir: Path = None
 
 
 def get_base_dir():

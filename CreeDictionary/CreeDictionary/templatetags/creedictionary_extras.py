@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: UTF-8 -*-
-
 """
 Template tags related to the Cree Dictionary specifically.
 """
 
-from CreeDictionary.utils import url_for_query
+from CreeDictionary.CreeDictionary.utils import url_for_query
 from django import template
 from django.utils.html import format_html
 from morphodict.templatetags.morphodict_orth import orth_tag

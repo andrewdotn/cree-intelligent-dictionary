@@ -17,9 +17,9 @@ skip = [
 minversion = "6.0"
 addopts = "--doctest-modules"
 
-testpaths = [
-    "CreeDictionary"
-]
+#testpaths = [
+#    "."
+#]
 
 env = [
     "USE_TEST_DB=true"
@@ -27,6 +27,8 @@ env = [
 
 # pytest-django
 DJANGO_SETTINGS_MODULE = "crkeng.site.settings"
+django_find_project = false
+python_paths = "."
 
 
 [project_paths]

@@ -2,20 +2,20 @@ import logging
 from http import HTTPStatus
 from typing import Any, Dict, Literal, Union
 
-from API.models import Wordform
-from API.search import presentation, search_with_affixes
+from CreeDictionary.API.models import Wordform
+from CreeDictionary.API.search import presentation, search_with_affixes
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
 from django.shortcuts import redirect, render
 from django.views import View
 from django.views.decorators.http import require_GET
-from utils import ParadigmSize
+from CreeDictionary.utils import ParadigmSize
 
-from CreeDictionary.forms import WordSearchForm
-from CreeDictionary.paradigm.filler import Row
-from CreeDictionary.paradigm.generation import generate_paradigm
-from CreeDictionary.paradigm.manager import default_paradigm_manager
-from CreeDictionary.paradigm.panes import Paradigm
+from CreeDictionary.CreeDictionary.forms import WordSearchForm
+from CreeDictionary.CreeDictionary.paradigm.filler import Row
+from CreeDictionary.CreeDictionary.paradigm.generation import generate_paradigm
+from CreeDictionary.CreeDictionary.paradigm.manager import default_paradigm_manager
+from CreeDictionary.CreeDictionary.paradigm.panes import Paradigm
 
 from .display_options import DISPLAY_MODE_COOKIE, DISPLAY_MODES
 from .utils import url_for_query
